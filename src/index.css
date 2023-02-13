@@ -1,0 +1,45 @@
+.App {
+  width: 100vw;
+  height: 100vh;
+ }
+
+ body {
+margin: 0;
+padding: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: blue;
+  color: white;
+  flex: 0.05;
+}
+
+.headerSearchInput {
+  background: rgba(32, 51, 252, 0.388);
+  border: none;
+  outline: none;
+  padding: 5px;  
+}
+
+.contentHeaderField:first-child, .contentItemField:first-child {
+  flex: 1.5;
+}
+.contentHeaderField, .contentItemField {
+  flex: 1; 
+}
+.contentHeader, .contentCountryItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contentItemFlagImg {
+  width: 120px;
+  height: 80px;
+  border: 1px solid black;
+}
+
