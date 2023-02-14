@@ -1,11 +1,11 @@
 .App {
   width: 100vw;
   height: 100vh;
- }
+}
 
- body {
-margin: 0;
-padding: 0;
+body {
+  margin: 0;
+  padding: 0;
 }
 
 .header {
@@ -19,22 +19,34 @@ padding: 0;
 }
 
 .headerSearchInput {
-  background: rgba(32, 51, 252, 0.388);
+  background: rgb(32, 50, 252);
   border: none;
   outline: none;
-  padding: 5px;  
+  padding: 5px;
+  color: white;
 }
 
-.contentHeaderField:first-child, .contentItemField:first-child {
+input.headerSearchInput::placeholder {
+  color: #ccc;
+}
+
+.contentHeaderField:first-child,
+.contentItemField:first-child {
   flex: 1.5;
+  padding-left: 10px;
 }
-.contentHeaderField, .contentItemField {
-  flex: 1; 
+
+.contentHeaderField,
+.contentItemField {
+  flex: 1;
 }
-.contentHeader, .contentCountryItem {
+
+.contentHeader,
+.contentCountryItem {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 7px 0;
 }
 
 .contentItemFlagImg {
@@ -43,3 +55,9 @@ padding: 0;
   border: 1px solid black;
 }
 
+.contentCountryItem {
+  border-top: 1px solid lightgray;
+}
+.contentCountryItem:hover {
+  background: lightgray;
+}
