@@ -1,6 +1,5 @@
 import React, { CSSProperties } from "react";
-import Header from "./components/Header";
-import Content from "./components/Content";
+import Country from "./pages/Country";
 const styles: CSSProperties  = { 
   display: 'flex',
   flexDirection: 'column', 
@@ -9,8 +8,7 @@ const styles: CSSProperties  = {
 function App() {
   return ( 
     <div className="App" style={styles}>
-      <Header/>
-      <Content/>
+      <Country/>
     </div>
   );
 }

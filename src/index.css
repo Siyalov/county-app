@@ -3,7 +3,7 @@
   height: 100vh;
 }
 
-body {
+* {
   margin: 0;
   padding: 0;
 }
@@ -60,4 +60,56 @@ input.headerSearchInput::placeholder {
 }
 .contentCountryItem:hover {
   background: lightgray;
+}
+
+.countryPage {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  height: 100vh;
+  justify-content: space-between;
+}
+
+.countryHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.countryHeaderLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.countryHeaderLeftLogo {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: orange;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  font-size: 24px;
+  color: white;
+}
+.countryHeaderLeftText {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.countryContent {
+  flex-direction: column;  
+  display: flex;
+  width: 100%;
+  flex: 0.9;
+}
+.countryContentFlag {
+  display: flex;
+  justify-content: center;
+
+}
+
+.countryContentImg {
+  border: 1px solid ;
 }
