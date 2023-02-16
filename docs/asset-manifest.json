@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.0ccd46ed.css",
-    "main.js": "/static/js/main.92175dd6.js",
-    "index.html": "/index.html",
-    "main.0ccd46ed.css.map": "/static/css/main.0ccd46ed.css.map",
-    "main.92175dd6.js.map": "/static/js/main.92175dd6.js.map"
+    "main.css": "https://siyalov.github.io/county-app/static/css/main.0ccd46ed.css",
+    "main.js": "https://siyalov.github.io/county-app/static/js/main.60b0fa04.js",
+    "index.html": "https://siyalov.github.io/county-app/index.html",
+    "main.0ccd46ed.css.map": "https://siyalov.github.io/county-app/static/css/main.0ccd46ed.css.map",
+    "main.60b0fa04.js.map": "https://siyalov.github.io/county-app/static/js/main.60b0fa04.js.map"
   },
   "entrypoints": [
     "static/css/main.0ccd46ed.css",
-    "static/js/main.92175dd6.js"
+    "static/js/main.60b0fa04.js"
   ]
 }
