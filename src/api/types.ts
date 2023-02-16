@@ -46,25 +46,14 @@ export interface Car {
     side:   Side;
 }
 
-export enum Side {
-    Left = "left",
-    Right = "right",
-}
+export type Side = "left" | "right"
 
 export interface CoatOfArms {
     png?: string;
     svg?: string;
 }
 
-export enum Continent {
-    Africa = "Africa",
-    Antarctica = "Antarctica",
-    Asia = "Asia",
-    Europe = "Europe",
-    NorthAmerica = "North America",
-    Oceania = "Oceania",
-    SouthAmerica = "South America",
-}
+export type Continent = "Africa" | "Antarctica" | "Asia" | "Europe" | "North America" | "Oceania" | "South America"
 
 export interface Currencies {
     ISK?: Aed;
@@ -282,22 +271,8 @@ export interface PostalCode {
     regex?: string;
 }
 
-export enum Region {
-    Africa = "Africa",
-    Americas = "Americas",
-    Antarctic = "Antarctic",
-    Asia = "Asia",
-    Europe = "Europe",
-    Oceania = "Oceania",
-}
+export type Region = "Africa" | "Americas" | "Antarctic" | "Asia" | "Europe" | "Oceania"
 
-export enum StartOfWeek {
-    Monday = "monday",
-    Saturday = "saturday",
-    Sunday = "sunday",
-}
+export type StartOfWeek = "monday" | "saturday" | "sunday"
 
-export enum Status {
-    OfficiallyAssigned = "officially-assigned",
-    UserAssigned = "user-assigned",
-}
+export type Status = "officially-assigned" | "user-assigned"

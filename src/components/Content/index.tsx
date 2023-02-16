@@ -3,6 +3,7 @@ import api from "../../api";
 import { Countries } from "../../api/types";
 import mapDictionary from "../../utils/mapDictionary";
 
+
 export default function Content() {
   const [countries, setCountries] = useState<Array<Countries>>([]);
 
