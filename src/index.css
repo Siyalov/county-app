@@ -54,7 +54,10 @@ input.headerSearchInput::placeholder {
   height: 80px;
   border: 1px solid black;
 }
-
+.contentDisableLink {
+  text-decoration: none;
+  color: inherit;
+}
 .contentCountryItem {
   border-top: 1px solid lightgray;
 }

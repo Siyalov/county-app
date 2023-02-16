@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 
 export default function Header() {
@@ -9,7 +10,7 @@ export default function Header() {
 
         </div>
         <p className="headerCountry">
-          Country
+          <Link to={"/"} className="contentDisableLink">Country</Link>
         </p>
       </div>
       <div className="headerSearch">
