@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import api from "../../api";
 import { Countries } from "../../api/types";
-import mapDictionary from "../../utils/mapDictionary";
 
-export default function Content() {
-  const [countries, setCountries] = useState<Array<Countries>>([]);
+interface ComponentProps {
+  query: string;
+  countries: Countries[];
+}
 
-  useEffect(() => {
-    api.getCountries().then(setCountries);
-  }, []);
+export default function Content({ query, countries }: ComponentProps) {
+  const formatter = new Intl.NumberFormat('fi', {notation: 'standard',});
 
   return (
     <div className="content">
@@ -23,31 +23,39 @@ export default function Content() {
       <div className="contentBody">
         <div className="contentCountryItems">
           {countries.map((country) => (
-          <Link to={'/country/' + country.cca3} className="contentDisableLink">
-            <div className="contentCountryItem">
-              <div className="contentItemField">
-                <div className="contentItemFlag">
-                  <img
-                    src={country.flags.svg}
-                    alt=""
-                    className="contentItemFlagImg"
-                  />
+            <Link
+              to={"/country/" + country.cca3}
+              className="contentDisableLink"
+              key={country.cca3}
+            >
+              <div className="contentCountryItem">
+                <div className="contentItemField">
+                  <div className="contentItemFlag">
+                    <img
+                      src={country.flags.svg}
+                      alt=""
+                      className="contentItemFlagImg"
+                    />
+                  </div>
+                </div>
+                <div className="contentItemField">{country.name.common}</div>
+                <div className="contentItemField">{country.region}</div>
+                <div className="contentItemField">{formatter.format(country.population)}</div>
+                <div className="contentItemField">
+                  {country.languages
+                    ? Object.keys(country.languages).map((key) => (
+                        <>
+                          {country.languages?.[key]}
+                          <br />
+                        </>
+                      ))
+                    : ""}
+                  <div className="contentItemFieldLanguage"></div>
+                  {/* {mapDictionary(country.languages).map(item =>item)} */}
                 </div>
               </div>
-              <div className="contentItemField">{country.name.common}</div>
-              <div className="contentItemField">{country.region}</div>
-              <div className="contentItemField">{country.population}</div>
-              <div className="contentItemField">
-                {country.languages ? Object.keys(country.languages).map(key => <>
-                  {country.languages?.[key]}
-                  <br/>
-                </>) : ''}
-                <div className="contentItemFieldLanguage"></div>
-                {/* {mapDictionary(country.languages).map(item =>item)} */}
-              </div>
-            </div></Link>
+            </Link>
           ))}
-
         </div>
       </div>
     </div>

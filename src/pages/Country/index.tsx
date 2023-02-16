@@ -3,19 +3,24 @@ import { useParams } from "react-router-dom";
 import api from "../../api";
 import { Countries } from "../../api/types";
 
-interface CountryProps {}
+interface CountryProps {
+  countries: Countries[]
+}
 
-const Country: React.FC<CountryProps> = () => {
+const Country: React.FC<CountryProps> = ({ countries }) => {
   const params = useParams() as { id: string };
   console.log(params);
 
   const [country, setCountry] = useState<Countries>();
 
   useEffect(() => {
-    api.getCountriesByCCA3(params.id).then((data) => {
-      setCountry(data[0]);
-    });
-  }, [params.id]);
+    const filtered = countries.filter(country => country.cca3 === params.id);
+    if (filtered.length > 0) {
+      setCountry(filtered[0]);
+    } else {
+      setCountry(undefined);
+    }
+  }, [params.id, countries]);
 
   return (
     <div className="countryPage">
