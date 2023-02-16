@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import api from "../../api";
 import { Countries } from "../../api/types";
 
 interface CountryProps {
-  countries: Countries[]
+  countries: Countries[];
 }
 
 const Country: React.FC<CountryProps> = ({ countries }) => {
@@ -14,7 +13,7 @@ const Country: React.FC<CountryProps> = ({ countries }) => {
   const [country, setCountry] = useState<Countries>();
 
   useEffect(() => {
-    const filtered = countries.filter(country => country.cca3 === params.id);
+    const filtered = countries.filter((country) => country.cca3 === params.id);
     if (filtered.length > 0) {
       setCountry(filtered[0]);
     } else {
@@ -24,24 +23,34 @@ const Country: React.FC<CountryProps> = ({ countries }) => {
 
   return (
     <div className="countryPage">
-      {country ? <>
-      <div className="countryHeader">
-        <div className="countryHeaderLeft">
-          <div className="countryHeaderLeftLogo">{country.name.common[0]}</div>
-          <div className="countryHeaderLeftText">
-            <h3 className="countryHeaderName">{country.name.common}</h3>
-            <div className="countryHeaderCapital">{country.capital}</div>
+      {country ? (
+        <>
+          <div className="countryHeader">
+            <div className="countryHeaderLeft">
+              <div className="countryHeaderLeftLogo">
+                {country.name.common[0]}
+              </div>
+              <div className="countryHeaderLeftText">
+                <h3 className="countryHeaderName">{country.name.common}</h3>
+                <div className="countryHeaderCapital">{country.capital}</div>
+              </div>
+            </div>
+            <div className="countryHeaderRight">SS</div>
           </div>
-        </div>
-        <div className="countryHeaderRight">SS</div>
-      </div>
-      <div className="countryContent">
-          <div className="countryContentFlag">
-            <img className="countryContentImg" src={country.flags.svg} alt="" />
-            <div className="countryContentInfo"></div>
+          <div className="countryContent">
+            <div className="countryContentFlag">
+              <img
+                className="countryContentImg"
+                src={country.flags.svg}
+                alt=""
+              />
+              <div className="countryContentInfo"></div>
+            </div>
           </div>
-      </div>
-      </> : <>loading..</>}
+        </>
+      ) : (
+        <>loading..</>
+      )}
     </div>
   );
 };

@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import api from "../../api";
 import { Countries } from "../../api/types";
 
 interface ComponentProps {
@@ -9,7 +8,7 @@ interface ComponentProps {
 }
 
 export default function Content({ query, countries }: ComponentProps) {
-  const formatter = new Intl.NumberFormat('fi', {notation: 'standard',});
+  const formatter = new Intl.NumberFormat("fi", { notation: "standard" });
 
   return (
     <div className="content">
@@ -40,7 +39,9 @@ export default function Content({ query, countries }: ComponentProps) {
                 </div>
                 <div className="contentItemField">{country.name.common}</div>
                 <div className="contentItemField">{country.region}</div>
-                <div className="contentItemField">{formatter.format(country.population)}</div>
+                <div className="contentItemField">
+                  {formatter.format(country.population)}
+                </div>
                 <div className="contentItemField">
                   {country.languages
                     ? Object.keys(country.languages).map((key) => (
