@@ -123,3 +123,10 @@ input.headerSearchInput::placeholder {
 .countryContentImg {
   border: 1px solid;
 }
+
+.countryLowerText {
+  padding-top: 45px;
+  font-size: 18px;
+  margin: 30px 1900px;
+  text-align: justify;
+}

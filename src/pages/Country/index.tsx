@@ -47,6 +47,13 @@ const Country: React.FC<CountryProps> = ({ countries }) => {
               <div className="countryContentInfo"></div>
             </div>
           </div>
+          <div className="countryLowerText">
+            <h3>
+              The county belongs to {country.region} region and {country.name.common} sub-region. 
+              Located at the {country.latlng[0]} «N» and {country.latlng[1]} «W», this country has population of {country.population}  
+              and it has gained the independent, according to the CIA World Factbook.
+            </h3>
+          </div>
         </>
       ) : (
         <>loading..</>
